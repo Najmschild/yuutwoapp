@@ -249,7 +249,7 @@ async def delete_period(period_id: str):
 async def get_cycle_predictions():
     """Get cycle predictions based on historical data"""
     periods = await db.periods.find({"user_id": "default_user"}).to_list(1000)
-    period_objects = [Period(**period) for period in periods]
+    period_objects = [Period(**deserialize_from_mongo(period)) for period in periods]
     return calculate_cycle_predictions(period_objects)
 
 @api_router.get("/calendar/{year}/{month}")
