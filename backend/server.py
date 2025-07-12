@@ -208,7 +208,8 @@ async def root():
 async def create_period(period_data: PeriodCreate):
     """Create a new period entry"""
     period = Period(**period_data.dict())
-    result = await db.periods.insert_one(period.dict())
+    period_dict = serialize_for_mongo(period.dict())
+    result = await db.periods.insert_one(period_dict)
     return period
 
 @api_router.get("/periods", response_model=List[Period])
