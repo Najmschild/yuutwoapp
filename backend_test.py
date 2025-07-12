@@ -399,7 +399,7 @@ class MenstrualCycleAPITester:
         # Test 3: Invalid calendar month/year
         self.log("Testing invalid calendar parameters...")
         try:
-            response = self.session.get(f"{self.base_url}/calendar/2024/13")  # Invalid month
+            response = self.session.get(f"{self.base_url}/calendar/2025/13")  # Invalid month
             if response.status_code in [400, 422]:
                 self.log("✅ Proper error handling for invalid month")
             else:
