@@ -216,7 +216,7 @@ async def create_period(period_data: PeriodCreate):
 async def get_periods():
     """Get all periods for the user"""
     periods = await db.periods.find({"user_id": "default_user"}).to_list(1000)
-    return [Period(**period) for period in periods]
+    return [Period(**deserialize_from_mongo(period)) for period in periods]
 
 @api_router.put("/periods/{period_id}", response_model=Period)
 async def update_period(period_id: str, period_update: PeriodUpdate):
