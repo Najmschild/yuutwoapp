@@ -324,11 +324,11 @@ class MenstrualCycleAPITester:
                     
                     self.log(f"✅ Calendar data structure is correct ({len(days)} days)")
                     
-                    # For March 2024, verify we have period data
-                    if year == 2024 and month == 3:
+                    # For January 2025, verify we have period data
+                    if year == 2025 and month == 1:
                         period_days = [day for day in days if day["is_period"]]
                         if period_days:
-                            self.log(f"✅ Found {len(period_days)} period days in March 2024")
+                            self.log(f"✅ Found {len(period_days)} period days in January 2025")
                             
                             # Verify flow intensity is set for period days
                             for day in period_days:
@@ -336,7 +336,7 @@ class MenstrualCycleAPITester:
                                     self.log(f"✅ Flow intensity set for period day: {day['date']}")
                                     break
                         else:
-                            self.log("❌ No period days found in March 2024 (expected from test data)", "ERROR")
+                            self.log("❌ No period days found in January 2025 (expected from test data)", "ERROR")
                             return False
                     
                     # Verify phase information
