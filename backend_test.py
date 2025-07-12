@@ -281,8 +281,8 @@ class MenstrualCycleAPITester:
         
         # Test current month and a month with our test data
         test_months = [
-            (2024, 3),  # Month with our test data
-            (2024, 12)  # Current/future month
+            (2025, 1),  # Month with our test data
+            (2025, 3)   # Future month
         ]
         
         for year, month in test_months:
