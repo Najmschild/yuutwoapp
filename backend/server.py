@@ -89,6 +89,35 @@ class CyclePrediction(BaseModel):
     cycle_regularity: str = "Unknown"
 
 # Helper functions
+def serialize_for_mongo(data: dict) -> dict:
+    """Convert date objects to strings for MongoDB storage"""
+    serialized = {}
+    for key, value in data.items():
+        if isinstance(value, date):
+            serialized[key] = value.isoformat()
+        elif isinstance(value, datetime):
+            serialized[key] = value.isoformat()
+        else:
+            serialized[key] = value
+    return serialized
+
+def deserialize_from_mongo(data: dict) -> dict:
+    """Convert date strings back to date objects from MongoDB"""
+    deserialized = {}
+    date_fields = ['start_date', 'end_date', 'created_at']
+    for key, value in data.items():
+        if key in date_fields and isinstance(value, str):
+            try:
+                if 'T' in value:  # datetime
+                    deserialized[key] = datetime.fromisoformat(value.replace('Z', '+00:00'))
+                else:  # date
+                    deserialized[key] = datetime.strptime(value, '%Y-%m-%d').date()
+            except ValueError:
+                deserialized[key] = value
+        else:
+            deserialized[key] = value
+    return deserialized
+
 def calculate_cycle_predictions(periods: List[Period]) -> CyclePrediction:
     """Calculate cycle predictions based on historical period data"""
     if not periods or len(periods) < 2:
