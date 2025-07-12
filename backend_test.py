@@ -279,6 +279,10 @@ class MenstrualCycleAPITester:
         """Test calendar data endpoint"""
         self.log("\n=== Testing Calendar Data ===")
         
+        # Add a small delay to ensure data consistency
+        import time
+        time.sleep(1)
+        
         # Test current month and a month with our test data
         test_months = [
             (2025, 7),  # Current month with our test data
