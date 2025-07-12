@@ -73,26 +73,26 @@ class MenstrualCycleAPITester:
         # Create multiple periods to test cycle calculations
         test_periods = [
             {
-                "start_date": "2024-01-15",
-                "end_date": "2024-01-20",
+                "start_date": "2024-11-15",
+                "end_date": "2024-11-20",
                 "flow_intensity": "heavy",
                 "notes": "First period of the year"
             },
             {
-                "start_date": "2024-02-12",
-                "end_date": "2024-02-17",
+                "start_date": "2024-12-12",
+                "end_date": "2024-12-17",
                 "flow_intensity": "medium",
                 "notes": "Regular cycle"
             },
             {
-                "start_date": "2024-03-14",
-                "end_date": "2024-03-18",
+                "start_date": "2025-01-14",
+                "end_date": "2025-01-18",
                 "flow_intensity": "light",
                 "notes": "Lighter than usual"
             },
             {
-                "start_date": "2024-04-11",
-                "end_date": "2024-04-16",
+                "start_date": "2025-02-11",
+                "end_date": "2025-02-16",
                 "flow_intensity": "medium",
                 "notes": "Back to normal"
             }
