@@ -222,6 +222,7 @@ async def get_periods():
 async def update_period(period_id: str, period_update: PeriodUpdate):
     """Update an existing period"""
     update_data = {k: v for k, v in period_update.dict().items() if v is not None}
+    update_data = serialize_for_mongo(update_data)
     
     result = await db.periods.update_one(
         {"id": period_id, "user_id": "default_user"},
@@ -232,7 +233,7 @@ async def update_period(period_id: str, period_update: PeriodUpdate):
         raise HTTPException(status_code=404, detail="Period not found")
     
     updated_period = await db.periods.find_one({"id": period_id})
-    return Period(**updated_period)
+    return Period(**deserialize_from_mongo(updated_period))
 
 @api_router.delete("/periods/{period_id}")
 async def delete_period(period_id: str):
