@@ -257,7 +257,7 @@ async def get_calendar_data(year: int, month: int):
     """Get calendar data for a specific month"""
     # Get periods
     periods = await db.periods.find({"user_id": "default_user"}).to_list(1000)
-    period_objects = [Period(**period) for period in periods]
+    period_objects = [Period(**deserialize_from_mongo(period)) for period in periods]
     
     # Get predictions
     predictions = calculate_cycle_predictions(period_objects)
