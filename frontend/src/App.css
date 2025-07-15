@@ -5,14 +5,124 @@
   box-sizing: border-box;
 }
 
+/* CSS Variables for Theme System */
+:root {
+  /* Default Theme */
+  --primary-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --accent-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --accent-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  
+  /* Period Colors */
+  --period-light: linear-gradient(135deg, #ffa8a8 0%, #ff8a95 100%);
+  --period-medium: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  --period-heavy: linear-gradient(135deg, #c92a2a 0%, #a61e4d 100%);
+  --period-predicted: linear-gradient(135deg, #ffb3b3 0%, #ffc9c9 100%);
+  
+  /* Cycle Colors */
+  --ovulation: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  --fertile: linear-gradient(135deg, #a8e6cf 0%, #7fcdcd 100%);
+  --luteal: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  
+  /* UI Colors */
+  --border-color: rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --error-color: #e74c3c;
+}
+
+/* Earth Theme */
+[data-theme="earth"] {
+  --primary-bg: linear-gradient(135deg, #f4f1eb 0%, #e8dcc0 100%);
+  --card-bg: rgba(255, 253, 248, 0.95);
+  --text-primary: #3d2f1f;
+  --text-secondary: #8b7355;
+  --accent-primary: linear-gradient(135deg, #8fbc8f 0%, #6b8e23 100%);
+  --accent-secondary: linear-gradient(135deg, #d2b48c 0%, #daa520 100%);
+  
+  --period-light: linear-gradient(135deg, #deb887 0%, #cd853f 100%);
+  --period-medium: linear-gradient(135deg, #a0522d 0%, #8b4513 100%);
+  --period-heavy: linear-gradient(135deg, #8b4513 0%, #654321 100%);
+  --period-predicted: linear-gradient(135deg, #f5deb3 0%, #deb887 100%);
+  
+  --ovulation: linear-gradient(135deg, #98fb98 0%, #90ee90 100%);
+  --fertile: linear-gradient(135deg, #f0fff0 0%, #e6ffe6 100%);
+  --luteal: linear-gradient(135deg, #faf0e6 0%, #f5f5dc 100%);
+}
+
+/* Monochrome Theme */
+[data-theme="monochrome"] {
+  --primary-bg: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --card-bg: rgba(255, 255, 255, 0.98);
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --accent-primary: linear-gradient(135deg, #495057 0%, #343a40 100%);
+  --accent-secondary: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  
+  --period-light: linear-gradient(135deg, #dee2e6 0%, #ced4da 100%);
+  --period-medium: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  --period-heavy: linear-gradient(135deg, #343a40 0%, #212529 100%);
+  --period-predicted: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  
+  --ovulation: linear-gradient(135deg, #adb5bd 0%, #868e96 100%);
+  --fertile: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --luteal: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* Calm Theme */
+[data-theme="calm"] {
+  --primary-bg: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-primary: #2c3e50;
+  --text-secondary: #5a6c7d;
+  --accent-primary: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%);
+  --accent-secondary: linear-gradient(135deg, #b0e0e6 0%, #87ceeb 100%);
+  
+  --period-light: linear-gradient(135deg, #ffd1dc 0%, #ffb6c1 100%);
+  --period-medium: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+  --period-heavy: linear-gradient(135deg, #dc143c 0%, #b22222 100%);
+  --period-predicted: linear-gradient(135deg, #ffe4e1 0%, #ffd1dc 100%);
+  
+  --ovulation: linear-gradient(135deg, #afeeee 0%, #40e0d0 100%);
+  --fertile: linear-gradient(135deg, #e0ffff 0%, #b0e0e6 100%);
+  --luteal: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary-bg: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  --card-bg: rgba(40, 40, 40, 0.95);
+  --text-primary: #f8f9fa;
+  --text-secondary: #adb5bd;
+  --accent-primary: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  --accent-secondary: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+  
+  --period-light: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+  --period-medium: linear-gradient(135deg, #e84393 0%, #e17055 100%);
+  --period-heavy: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+  --period-predicted: linear-gradient(135deg, #fab1a0 0%, #e17055 100%);
+  
+  --ovulation: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  --fertile: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
+  --luteal: linear-gradient(135deg, #636e72 0%, #2d3436 100%);
+  
+  --border-color: rgba(255, 255, 255, 0.1);
+  --hover-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: var(--primary-bg);
   min-height: 100vh;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
 }
 
 /* App layout */
@@ -23,40 +133,201 @@ body {
 }
 
 .app-header {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
   padding: 2rem;
-  text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--border-color);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-.app-header h1 {
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header-left h1 {
   font-size: 2.5rem;
   font-weight: 300;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--accent-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.app-header p {
-  color: #7f8c8d;
+.header-left p {
+  color: var(--text-secondary);
   font-size: 1.1rem;
   font-weight: 300;
+}
+
+/* Theme Selector */
+.theme-selector {
+  position: relative;
+}
+
+.theme-button {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-button:hover {
+  background: var(--card-bg);
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-2px);
+}
+
+.theme-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 0.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.theme-option {
+  width: 100%;
+  padding: 0.75rem;
+  background: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+}
+
+.theme-option:hover,
+.theme-option.active {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.theme-name {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.theme-description {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 
 .app-main {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 320px;
   gap: 2rem;
   padding: 2rem;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+}
+
+/* Quick Add Period */
+.quick-add-period {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  margin-bottom: 1.5rem;
+}
+
+.quick-add-period h4 {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.quick-add-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quick-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.quick-add-btn:hover {
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-1px);
+}
+
+.quick-add-btn.flow-light {
+  border-color: #ffa8a8;
+}
+
+.quick-add-btn.flow-medium {
+  border-color: #ff6b6b;
+}
+
+.quick-add-btn.flow-heavy {
+  border-color: #c92a2a;
+}
+
+.quick-add-btn.flow-light:hover {
+  background: var(--period-light);
+  color: white;
+}
+
+.quick-add-btn.flow-medium:hover {
+  background: var(--period-medium);
+  color: white;
+}
+
+.quick-add-btn.flow-heavy:hover {
+  background: var(--period-heavy);
+  color: white;
+}
+
+.flow-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.quick-add-note {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
 }
 
 /* Calendar navigation */
@@ -68,27 +339,27 @@ body {
 }
 
 .nav-button {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
-  color: #2c3e50;
+  color: var(--text-primary);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
 }
 
 .nav-button:hover {
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: var(--card-bg);
+  box-shadow: var(--hover-shadow);
   transform: translateY(-2px);
 }
 
 /* Calendar container */
 .calendar-container {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--card-bg);
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -97,7 +368,7 @@ body {
 
 .calendar-header h2 {
   text-align: center;
-  color: #2c3e50;
+  color: var(--text-primary);
   font-size: 1.8rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
@@ -118,7 +389,7 @@ body {
   text-align: center;
   padding: 1rem 0.5rem;
   font-weight: 600;
-  color: #7f8c8d;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -140,16 +411,16 @@ body {
   cursor: pointer;
   border-radius: 12px;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--card-bg);
   border: 1px solid transparent;
   min-height: 60px;
 }
 
 .calendar-day:hover {
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: var(--card-bg);
+  box-shadow: var(--hover-shadow);
   transform: translateY(-2px);
-  border-color: rgba(103, 126, 234, 0.3);
+  border-color: var(--border-color);
 }
 
 .calendar-day.empty {
@@ -166,15 +437,14 @@ body {
 .day-number {
   font-size: 1rem;
   font-weight: 500;
-  color: #2c3e50;
+  color: var(--text-primary);
   z-index: 2;
+  margin-bottom: 0.25rem;
 }
 
 /* Period day styles */
 .calendar-day.period-day {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
   color: white;
-  border-color: #ff6b6b;
 }
 
 .calendar-day.period-day .day-number {
@@ -183,16 +453,23 @@ body {
 }
 
 .calendar-day.period-day.flow-light {
-  background: linear-gradient(135deg, #ffa8a8 0%, #ff8a95 100%);
+  background: var(--period-light);
+  border-color: #ffa8a8;
+}
+
+.calendar-day.period-day.flow-medium {
+  background: var(--period-medium);
+  border-color: #ff6b6b;
 }
 
 .calendar-day.period-day.flow-heavy {
-  background: linear-gradient(135deg, #c92a2a 0%, #a61e4d 100%);
+  background: var(--period-heavy);
+  border-color: #c92a2a;
 }
 
 /* Predicted period */
 .calendar-day.predicted-period {
-  background: linear-gradient(135deg, #ffb3b3 0%, #ffc9c9 100%);
+  background: var(--period-predicted);
   border: 2px dashed #ff6b6b;
   color: #c92a2a;
 }
@@ -203,7 +480,7 @@ body {
 
 /* Ovulation day */
 .calendar-day.ovulation-day {
-  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  background: var(--ovulation);
   color: white;
   border-color: #4ecdc4;
 }
@@ -215,7 +492,7 @@ body {
 
 /* Fertile window */
 .calendar-day.fertile-day {
-  background: linear-gradient(135deg, #a8e6cf 0%, #7fcdcd 100%);
+  background: var(--fertile);
   color: #2d8659;
   border-color: #4ecdc4;
 }
@@ -227,31 +504,44 @@ body {
 
 /* Luteal phase */
 .calendar-day.luteal-phase {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: var(--luteal);
   border-color: #dee2e6;
 }
 
 /* Indicators */
 .period-indicator,
 .ovulation-indicator,
-.fertile-indicator {
+.fertile-indicator,
+.has-notes {
   position: absolute;
-  bottom: 4px;
-  right: 4px;
   font-size: 0.7rem;
   font-weight: bold;
 }
 
 .period-indicator {
-  color: #fff;
+  bottom: 4px;
+  right: 4px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
 }
 
 .ovulation-indicator {
-  color: #fff;
+  bottom: 4px;
+  right: 4px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .fertile-indicator {
+  bottom: 4px;
+  right: 4px;
   color: #2d8659;
+}
+
+.has-notes {
+  top: 4px;
+  left: 4px;
+  font-size: 0.6rem;
+  opacity: 0.7;
 }
 
 /* Sidebar */
@@ -263,7 +553,7 @@ body {
 
 /* Cycle insights */
 .cycle-insights {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
@@ -271,7 +561,7 @@ body {
 }
 
 .cycle-insights h3 {
-  color: #2c3e50;
+  color: var(--text-primary);
   font-size: 1.3rem;
   font-weight: 500;
   margin-bottom: 1rem;
@@ -284,16 +574,33 @@ body {
 }
 
 .insight-card {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: var(--luteal);
   border-radius: 12px;
   padding: 1rem;
-  text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.insight-card:hover {
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-1px);
+}
+
+.insight-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.insight-content {
+  flex: 1;
 }
 
 .insight-label {
   font-size: 0.85rem;
-  color: #7f8c8d;
+  color: var(--text-secondary);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -302,13 +609,25 @@ body {
 
 .insight-value {
   font-size: 1.1rem;
-  color: #2c3e50;
+  color: var(--text-primary);
   font-weight: 600;
+}
+
+.insight-value.success {
+  color: var(--success-color);
+}
+
+.insight-value.warning {
+  color: var(--warning-color);
+}
+
+.insight-value.error {
+  color: var(--error-color);
 }
 
 /* Legend */
 .legend {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
@@ -316,7 +635,7 @@ body {
 }
 
 .legend h4 {
-  color: #2c3e50;
+  color: var(--text-primary);
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 1rem;
@@ -334,14 +653,20 @@ body {
   align-items: center;
   gap: 0.75rem;
   font-size: 0.9rem;
-  color: #2c3e50;
+  color: var(--text-primary);
 }
 
 .legend-color {
-  width: 16px;
+  width: 20px;
   height: 16px;
   border-radius: 4px;
   flex-shrink: 0;
+}
+
+.legend-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* Modal styles */
@@ -360,7 +685,7 @@ body {
 }
 
 .modal-content {
-  background: white;
+  background: var(--card-bg);
   border-radius: 20px;
   width: 90%;
   max-width: 500px;
@@ -371,14 +696,14 @@ body {
 
 .modal-header {
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .modal-header h3 {
-  color: #2c3e50;
+  color: var(--text-primary);
   font-size: 1.4rem;
   font-weight: 500;
 }
@@ -387,7 +712,7 @@ body {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: #7f8c8d;
+  color: var(--text-secondary);
   cursor: pointer;
   padding: 0;
   width: 30px;
@@ -400,8 +725,8 @@ body {
 }
 
 .close-button:hover {
-  background: #f8f9fa;
-  color: #2c3e50;
+  background: var(--luteal);
+  color: var(--text-primary);
 }
 
 .modal-body {
@@ -415,7 +740,7 @@ body {
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #2c3e50;
+  color: var(--text-primary);
   font-weight: 500;
   font-size: 0.9rem;
 }
@@ -425,11 +750,12 @@ body {
 .form-group textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.2s ease;
-  background: #fafafa;
+  background: var(--card-bg);
+  color: var(--text-primary);
 }
 
 .form-group input:focus,
@@ -438,7 +764,6 @@ body {
   outline: none;
   border-color: #667eea;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-  background: white;
 }
 
 .form-group textarea {
@@ -446,9 +771,80 @@ body {
   min-height: 80px;
 }
 
+.date-input-with-prediction {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prediction-button {
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.prediction-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.flow-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.flow-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--card-bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+}
+
+.flow-option:hover {
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
+.flow-option.active.flow-light {
+  background: var(--period-light);
+  border-color: #ffa8a8;
+  color: white;
+}
+
+.flow-option.active.flow-medium {
+  background: var(--period-medium);
+  border-color: #ff6b6b;
+  color: white;
+}
+
+.flow-option.active.flow-heavy {
+  background: var(--period-heavy);
+  border-color: #c92a2a;
+  color: white;
+}
+
+.flow-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 .modal-footer {
   padding: 1.5rem 2rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-color);
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
@@ -466,7 +862,7 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--accent-primary);
   color: white;
 }
 
@@ -476,21 +872,21 @@ body {
 }
 
 .btn-secondary {
-  background: #f8f9fa;
-  color: #6c757d;
-  border: 1px solid #dee2e6;
+  background: var(--luteal);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
 }
 
 .btn-secondary:hover {
-  background: #e9ecef;
-  color: #495057;
+  background: var(--card-bg);
+  color: var(--text-primary);
 }
 
 /* Loading state */
 .loading {
   text-align: center;
   padding: 3rem;
-  color: #7f8c8d;
+  color: var(--text-secondary);
   font-size: 1.1rem;
 }
 
@@ -499,6 +895,11 @@ body {
   .app-main {
     grid-template-columns: 1fr;
     padding: 1rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
   }
   
   .calendar-container {
@@ -527,6 +928,21 @@ body {
     padding: 0.5rem 0.25rem;
     font-size: 0.8rem;
   }
+  
+  .flow-selector {
+    flex-direction: column;
+  }
+  
+  .quick-add-buttons {
+    flex-direction: row;
+    gap: 0.25rem;
+  }
+  
+  .quick-add-btn {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -541,5 +957,9 @@ body {
   
   .day-number {
     font-size: 0.85rem;
+  }
+  
+  .quick-add-buttons {
+    flex-direction: column;
   }
 }
