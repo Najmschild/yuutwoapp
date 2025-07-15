@@ -460,8 +460,9 @@ body {
   transition: all 0.3s ease;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  min-height: 60px;
-  max-height: 80px;
+  min-height: 80px;
+  max-height: 100px;
+  overflow: hidden;
 }
 
 .calendar-day:hover {
@@ -474,6 +475,7 @@ body {
 .calendar-day.empty {
   cursor: default;
   background: transparent;
+  border: none;
 }
 
 .calendar-day.empty:hover {
@@ -482,22 +484,52 @@ body {
   transform: none;
 }
 
+.day-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.25rem;
+}
+
 .day-number {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-primary);
   z-index: 2;
   margin-bottom: 0.25rem;
 }
 
-/* Period day styles */
+/* Today indicator */
+.calendar-day.today {
+  border: 2px solid var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3);
+}
+
+.today-indicator {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: var(--accent-primary);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: bold;
+  padding: 0.15rem 0.3rem;
+  border-radius: 8px;
+  line-height: 1;
+}
+
+/* Period day stickers */
 .calendar-day.period-day {
   color: white;
 }
 
 .calendar-day.period-day .day-number {
   color: white;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .calendar-day.period-day.flow-light {
@@ -515,6 +547,27 @@ body {
   border-color: #c92a2a;
 }
 
+.period-sticker {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+  padding: 0.15rem 0.3rem;
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.period-icon {
+  font-size: 0.8rem;
+}
+
+.period-label {
+  font-weight: 600;
+}
+
 /* Predicted period */
 .calendar-day.predicted-period {
   background: var(--period-predicted);
@@ -524,6 +577,24 @@ body {
 
 .calendar-day.predicted-period .day-number {
   color: #c92a2a;
+  font-weight: 600;
+}
+
+.predicted-sticker {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #c92a2a;
+  padding: 0.15rem 0.3rem;
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.predicted-icon {
+  font-size: 0.8rem;
 }
 
 /* Ovulation day */
@@ -535,7 +606,24 @@ body {
 
 .calendar-day.ovulation-day .day-number {
   color: white;
+  font-weight: 700;
+}
+
+.ovulation-sticker {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+  padding: 0.15rem 0.3rem;
+  border-radius: 8px;
+  font-size: 0.65rem;
   font-weight: 600;
+  margin-top: auto;
+}
+
+.ovulation-icon {
+  font-size: 0.8rem;
 }
 
 /* Fertile window */
@@ -547,13 +635,50 @@ body {
 
 .calendar-day.fertile-day .day-number {
   color: #2d8659;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.fertile-sticker {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2d8659;
+  padding: 0.15rem 0.3rem;
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.fertile-icon {
+  font-size: 0.8rem;
 }
 
 /* Luteal phase */
 .calendar-day.luteal-phase {
   background: var(--luteal);
   border-color: #dee2e6;
+}
+
+/* Notes indicator */
+.notes-sticker {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.notes-icon {
+  font-size: 0.7rem;
 }
 
 /* Indicators */
