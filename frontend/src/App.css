@@ -1016,13 +1016,14 @@ body {
     font-size: 0.8rem;
   }
   
+  .theme-backdrop {
+    padding: 120px 1rem 1rem 1rem;
+  }
+  
   .theme-dropdown {
-    position: fixed;
-    top: 120px;
-    right: 1rem;
-    left: 1rem;
     min-width: auto;
-    z-index: 10000;
+    width: 100%;
+    max-width: 300px;
   }
 }
 
