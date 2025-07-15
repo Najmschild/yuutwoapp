@@ -168,6 +168,7 @@ body {
 /* Theme Selector */
 .theme-selector {
   position: relative;
+  z-index: 100;
 }
 
 .theme-button {
@@ -194,9 +195,8 @@ body {
 
 .theme-dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 0.5rem);
   right: 0;
-  margin-top: 0.5rem;
   background: var(--card-bg);
   border-radius: 16px;
   padding: 0.5rem;
@@ -204,6 +204,7 @@ body {
   backdrop-filter: blur(10px);
   z-index: 1000;
   min-width: 200px;
+  border: 1px solid var(--border-color);
 }
 
 .theme-option {
