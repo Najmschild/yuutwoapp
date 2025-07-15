@@ -1101,9 +1101,31 @@ body {
   }
   
   .calendar-day {
-    min-height: 40px;
-    max-height: 50px;
+    min-height: 60px;
+    max-height: 70px;
     font-size: 0.9rem;
+  }
+  
+  .day-number {
+    font-size: 0.9rem;
+  }
+  
+  .period-sticker,
+  .predicted-sticker,
+  .ovulation-sticker,
+  .fertile-sticker {
+    font-size: 0.55rem;
+    padding: 0.1rem 0.2rem;
+  }
+  
+  .today-indicator {
+    font-size: 0.5rem;
+    padding: 0.1rem 0.2rem;
+  }
+  
+  .notes-sticker {
+    width: 16px;
+    height: 16px;
   }
   
   .app-header {
