@@ -1,0 +1,74 @@
+/* --- THEME SELECTOR DROPDOWN STYLES --- */
+
+.theme-button {
+    background: var(--button-secondary-bg);
+    color: var(--button-secondary-text);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 6rem; /* Position below the header */
+}
+
+.theme-dropdown {
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 320px;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.theme-option {
+    width: 100%;
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 1rem;
+    text-align: left;
+    cursor: pointer;
+    color: var(--primary-text-color);
+}
+
+.theme-option:hover {
+    background-color: var(--button-secondary-bg);
+}
+
+.theme-option.active {
+    border-color: var(--accent-color-1);
+    font-weight: bold;
+}
+
+.theme-name {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.theme-description {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--secondary-text-color);
+}
