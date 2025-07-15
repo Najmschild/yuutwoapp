@@ -259,6 +259,8 @@ body {
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .quick-add-period h4 {
