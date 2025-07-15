@@ -168,7 +168,7 @@ body {
 /* Theme Selector */
 .theme-selector {
   position: relative;
-  z-index: 100;
+  z-index: 9999;
 }
 
 .theme-button {
@@ -185,6 +185,8 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  position: relative;
+  z-index: 9999;
 }
 
 .theme-button:hover {
@@ -194,15 +196,15 @@ body {
 }
 
 .theme-dropdown {
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  right: 0;
+  position: fixed;
+  top: 80px;
+  right: 2rem;
   background: var(--card-bg);
   border-radius: 16px;
   padding: 0.5rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  z-index: 1000;
+  z-index: 10000;
   min-width: 200px;
   border: 1px solid var(--border-color);
 }
