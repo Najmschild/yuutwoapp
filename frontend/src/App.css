@@ -995,9 +995,12 @@ body {
   }
   
   .theme-dropdown {
+    position: fixed;
+    top: 120px;
     right: 1rem;
     left: 1rem;
     min-width: auto;
+    z-index: 10000;
   }
 }
 
