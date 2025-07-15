@@ -1183,13 +1183,31 @@ body {
   }
   
   .calendar-day {
-    min-height: 35px;
-    max-height: 40px;
-    border-radius: 6px;
+    min-height: 50px;
+    max-height: 60px;
+    border-radius: 8px;
   }
   
   .day-number {
     font-size: 0.85rem;
+  }
+  
+  .period-sticker,
+  .predicted-sticker,
+  .ovulation-sticker,
+  .fertile-sticker {
+    font-size: 0.5rem;
+    padding: 0.08rem 0.15rem;
+  }
+  
+  .today-indicator {
+    font-size: 0.45rem;
+    padding: 0.08rem 0.15rem;
+  }
+  
+  .notes-sticker {
+    width: 14px;
+    height: 14px;
   }
   
   .quick-add-buttons {
