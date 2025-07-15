@@ -332,12 +332,20 @@ body {
   margin-top: 0.5rem;
 }
 
+/* Calendar section */
+.calendar-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
 /* Calendar navigation */
 .calendar-navigation {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
 .nav-button {
