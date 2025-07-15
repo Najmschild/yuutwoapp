@@ -681,40 +681,38 @@ body {
   font-size: 0.7rem;
 }
 
-/* Indicators */
-.period-indicator,
-.ovulation-indicator,
-.fertile-indicator,
-.has-notes {
-  position: absolute;
-  font-size: 0.7rem;
-  font-weight: bold;
-}
-
-.period-indicator {
-  bottom: 4px;
-  right: 4px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.8rem;
-}
-
-.ovulation-indicator {
-  bottom: 4px;
-  right: 4px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.fertile-indicator {
-  bottom: 4px;
-  right: 4px;
-  color: #2d8659;
-}
-
-.has-notes {
-  top: 4px;
-  left: 4px;
-  font-size: 0.6rem;
-  opacity: 0.7;
+/* Mobile responsive styles for calendar */
+@media (max-width: 768px) {
+  .calendar-day {
+    min-height: 60px;
+    max-height: 70px;
+  }
+  
+  .day-number {
+    font-size: 0.9rem;
+  }
+  
+  .period-sticker,
+  .predicted-sticker,
+  .ovulation-sticker,
+  .fertile-sticker {
+    font-size: 0.55rem;
+    padding: 0.1rem 0.2rem;
+  }
+  
+  .today-indicator {
+    font-size: 0.5rem;
+    padding: 0.1rem 0.2rem;
+  }
+  
+  .notes-sticker {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .notes-icon {
+    font-size: 0.6rem;
+  }
 }
 
 /* Sidebar */
