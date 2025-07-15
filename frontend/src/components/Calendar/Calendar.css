@@ -1,0 +1,97 @@
+/* --- CALENDAR GRID & DAY STYLES --- */
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.weekday-header {
+  font-weight: bold;
+  color: var(--secondary-text-color);
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+.calendar-day {
+  position: relative;
+  aspect-ratio: 1 / 1; /* Creates square days */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+}
+
+.calendar-day:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  background-color: var(--button-secondary-bg);
+}
+
+.calendar-day.empty {
+  background: none;
+  border: none;
+  cursor: default;
+}
+
+.calendar-day.empty:hover {
+    transform: none;
+}
+
+.day-content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.day-number {
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+/* Day Indicators */
+.today {
+  border: 2px solid var(--accent-color-1);
+}
+
+.today .day-number {
+  background: var(--accent-color-1);
+  color: var(--button-primary-text);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Period & Phase Styles */
+.period-day { background-color: #F15BB520; }
+.flow-light { background-color: #F15BB520; }
+.flow-medium { background-color: #F15BB540; }
+.flow-heavy { background-color: #F15BB560; }
+
+.predicted-period { background-color: #9B5DE520; border-style: dashed; }
+.ovulation-day { background-color: #00BFA630; }
+.fertile-day { background-color: #00BFA615; }
+.luteal-phase { background-color: #FFB70310; }
+
+/* Stickers inside calendar days */
+.period-sticker, .predicted-sticker, .ovulation-sticker, .fertile-sticker, .notes-sticker {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.period-sticker { background-color: var(--accent-color-3); color: white; }
+.predicted-sticker { background-color: var(--accent-color-1); color: white; }
+.ovulation-sticker { background-color: var(--success-color); color: white; }
+.fertile-sticker { background-color: #00bfa680; color: white; }
+.notes-sticker { position: absolute; bottom: 5px; right: 5px; font-size: 1rem; }
