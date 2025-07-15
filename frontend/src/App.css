@@ -433,8 +433,9 @@ body {
   border-radius: 12px;
   transition: all 0.3s ease;
   background: var(--card-bg);
-  border: 1px solid transparent;
+  border: 1px solid var(--border-color);
   min-height: 60px;
+  max-height: 80px;
 }
 
 .calendar-day:hover {
