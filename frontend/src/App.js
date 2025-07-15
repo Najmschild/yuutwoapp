@@ -112,6 +112,7 @@ const QuickAddPeriod = ({ onQuickAdd }) => {
 const Calendar = ({ year, month, onDateClick, calendarData }) => {
   const daysInMonth = new Date(year, month, 0).getDate();
   const firstDayOfMonth = new Date(year, month - 1, 1).getDay();
+  const today = new Date();
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
@@ -122,12 +123,25 @@ const Calendar = ({ year, month, onDateClick, calendarData }) => {
     return calendarData?.find(data => data.date === dateStr);
   };
 
+  const isToday = (day) => {
+    return (
+      today.getDate() === day &&
+      today.getMonth() + 1 === month &&
+      today.getFullYear() === year
+    );
+  };
+
   const getDayClass = (day) => {
     const dayData = getDayData(day);
-    if (!dayData) return 'calendar-day';
-
     let classes = 'calendar-day';
     
+    // Add today indicator
+    if (isToday(day)) {
+      classes += ' today';
+    }
+    
+    if (!dayData) return classes;
+
     if (dayData.is_period) {
       classes += ' period-day';
       if (dayData.flow_intensity === 'light') classes += ' flow-light';
@@ -166,21 +180,61 @@ const Calendar = ({ year, month, onDateClick, calendarData }) => {
     // Days of the month
     for (let day = 1; day <= daysInMonth; day++) {
       const dayData = getDayData(day);
+      const isTodayDay = isToday(day);
+      
       days.push(
         <div
           key={day}
           className={getDayClass(day)}
           onClick={() => onDateClick(year, month, day)}
         >
-          <span className="day-number">{day}</span>
-          {dayData?.is_period && (
-            <span className="period-indicator">
-              {getFlowIcon(dayData.flow_intensity)}
-            </span>
-          )}
-          {dayData?.is_ovulation && <span className="ovulation-indicator">○</span>}
-          {dayData?.is_fertile && !dayData.is_ovulation && <span className="fertile-indicator">◇</span>}
-          {dayData?.notes && <span className="has-notes">📝</span>}
+          <div className="day-content">
+            <span className="day-number">{day}</span>
+            
+            {/* Today indicator */}
+            {isTodayDay && <div className="today-indicator">TODAY</div>}
+            
+            {/* Period indicators */}
+            {dayData?.is_period && (
+              <div className="period-sticker">
+                <span className="period-icon">
+                  {getFlowIcon(dayData.flow_intensity)}
+                </span>
+                <span className="period-label">Period</span>
+              </div>
+            )}
+            
+            {/* Predicted period */}
+            {dayData?.is_predicted_period && (
+              <div className="predicted-sticker">
+                <span className="predicted-icon">◦</span>
+                <span className="predicted-label">Expected</span>
+              </div>
+            )}
+            
+            {/* Ovulation indicator */}
+            {dayData?.is_ovulation && (
+              <div className="ovulation-sticker">
+                <span className="ovulation-icon">🥚</span>
+                <span className="ovulation-label">Ovulation</span>
+              </div>
+            )}
+            
+            {/* Fertile window */}
+            {dayData?.is_fertile && !dayData.is_ovulation && (
+              <div className="fertile-sticker">
+                <span className="fertile-icon">🌱</span>
+                <span className="fertile-label">Fertile</span>
+              </div>
+            )}
+            
+            {/* Notes indicator */}
+            {dayData?.notes && (
+              <div className="notes-sticker">
+                <span className="notes-icon">📝</span>
+              </div>
+            )}
+          </div>
         </div>
       );
     }
