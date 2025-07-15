@@ -666,6 +666,8 @@ body {
   padding: 1.5rem;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
 }
 
 .legend h4 {
