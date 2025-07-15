@@ -418,6 +418,8 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
+  flex: 1;
+  auto-rows: 1fr;
 }
 
 .calendar-day {
